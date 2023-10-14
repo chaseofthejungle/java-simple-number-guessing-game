@@ -14,7 +14,7 @@ public class NumberGuessingGame {
             guess = input.nextInt();
 
             if (number == guess) {
-                System.out.println("Correct!!");
+                System.out.println("Correct! It took you " + (i + 1) + " attempts to get the answer!");
                 break;
             } else if (number > guess && i != attempts - 1) {
                 System.out.println(guess + " is too low.");
