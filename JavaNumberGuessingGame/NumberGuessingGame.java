@@ -32,6 +32,11 @@ public class NumberGuessingGame {
 
             System.out.println("Would you like to play again? (y = yes, n = no)");
             keepPlaying = input.next().charAt(0);
+
+            while (keepPlaying != 'y' && keepPlaying != 'Y' && keepPlaying != 'n' && keepPlaying != 'N') {
+                System.out.println("Invalid Answer. Would you like to play again? (y = yes, n = no)");
+                keepPlaying = input.next().charAt(0);
+            }
         }
     }
 }
