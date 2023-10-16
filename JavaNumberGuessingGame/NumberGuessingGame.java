@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NumberGuessingGame {
@@ -6,6 +7,7 @@ public class NumberGuessingGame {
         int number = 1 + (int) (100 * Math.random());
         int attempts = 5;
         int i, guess;
+        ArrayList<Integer> guesses = new ArrayList<Integer>();
         char keepPlaying = 'y';
 
         System.out.println("Guess a number between 1 to 100 accurately within 5 attempts.");
@@ -14,6 +16,7 @@ public class NumberGuessingGame {
             for (i = 0; i < attempts; i++) {
                 System.out.println("Enter your guess: ");
                 guess = input.nextInt();
+                guesses.add(guess);
 
                 if (number == guess) {
                     System.out.println("Correct! It took you " + (i + 1) + " attempts to get the answer!");
@@ -30,6 +33,8 @@ public class NumberGuessingGame {
                 System.out.println("The number was: " + number);
             }
 
+            System.out.println("Your guesses were: " + guesses);
+            guesses.clear();
             System.out.println("Would you like to play again? (y = yes, n = no)");
             keepPlaying = input.next().charAt(0);
 
