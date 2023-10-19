@@ -5,14 +5,16 @@ public class NumberGuessingGame {
     public static void main(String arg[]) {
         Scanner input = new Scanner(System.in);
         int number = 1 + (int) (100 * Math.random());
-        int attempts = 5;
-        int i, guess;
+        int i, guess, attempts;
         ArrayList<Integer> guesses = new ArrayList<Integer>();
         char keepPlaying = 'y';
 
-        System.out.println("Guess a number between 1 to 100 accurately within 5 attempts.");
+        System.out.println("Your Objective: \t Accurately guess a whole number between 1 and 100.");
 
         while (keepPlaying == 'y' || keepPlaying == 'Y') {
+            System.out.println("How many attempts would you like to have at guessing the number?");
+            attempts = input.nextInt();
+
             for (i = 0; i < attempts; i++) {
                 System.out.println("Enter your guess: ");
                 guess = input.nextInt();
