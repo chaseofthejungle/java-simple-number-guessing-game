@@ -4,15 +4,20 @@ import java.util.Scanner;
 public class NumberGuessingGame {
     public static void main(String arg[]) {
         Scanner input = new Scanner(System.in);
-        int i, guess, attempts, highestValue;
+        int i, guess, attempts, highestValue = 0;
         ArrayList<Integer> guesses = new ArrayList<Integer>();
         char keepPlaying = 'y';
 
         System.out.println("Your Objective: \t Accurately guess a whole number between 1 and a number that you define.");
 
         while (keepPlaying == 'y' || keepPlaying == 'Y') {
-            System.out.println("Enter the highest possible value for the number to guess.");
-            highestValue = input.nextInt();
+            System.out.println("Enter the highest possible value for the number to guess (or Q to Quit).");
+            if (input.hasNextInt()) {
+                highestValue = input.nextInt();
+            } else if (input.hasNext("Q") || input.hasNext("q")) {
+                System.out.println("Thank you for playing.");
+                System.exit(0);
+            }
 
             int number = 1 + (int) (highestValue * Math.random());
 
