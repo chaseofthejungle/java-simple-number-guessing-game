@@ -1,5 +1,5 @@
 # Simple Number Guessing Game (in Java)
 
-This is starter code for a console-based number guessing game (limit of 5 guesses).
+This is a console-based number guessing game in which the player can define how many guesses they get and the maximum possible value of the number to be guessed.
 
 TODO: Add input validation for guesses.
